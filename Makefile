@@ -3,3 +3,6 @@ CFLAGS=-std=gnu99 -Os -nostdlib -m32 -march=i386 -ffreestanding -fno-pie \
 
 hello.com : hello.c com.ld
 	gcc $(CFLAGS) -o $@ $^
+
+run : hello.com
+	dosemu -t exec.bat
